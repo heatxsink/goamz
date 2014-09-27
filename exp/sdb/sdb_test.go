@@ -1,9 +1,9 @@
 package sdb_test
 
 import (
-	"github.com/goamz/goamz/aws"
-	"github.com/goamz/goamz/exp/sdb"
-	"github.com/goamz/goamz/testutil"
+	"github.com/heatxsink/goamz/aws"
+	"github.com/heatxsink/goamz/exp/sdb"
+	"github.com/heatxsink/goamz/testutil"
 	"github.com/motain/gocheck"
 	"testing"
 )

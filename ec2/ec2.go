@@ -634,8 +634,8 @@ type InstanceStatusType struct {
 type InstanceStatusEventType struct {
 	Code string `xml:"code"`
 	Description string `xml:"description"`
-	NotBefore string `xml:"notBefore"`
-	NotAfter string `xml:"notAfter"`
+	NotBefore time.Time `xml:"notBefore"`
+	NotAfter time.Time `xml:"notAfter"`
 }
 
 type InstanceStatusItemType struct {

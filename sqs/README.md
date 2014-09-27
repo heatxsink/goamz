@@ -6,12 +6,12 @@ Merged from https://github.com/Mistobaan/sqs
 Installation
 ------------
 
-    go get github.com/goamz/goamz/sqs
+    go get github.com/heatxsink/goamz/sqs
 
 Documentation
 -------------
 
-http://godoc.org/github.com/goamz/goamz/sqs
+http://godoc.org/github.com/heatxsink/goamz/sqs
 
 
 Sample Usage

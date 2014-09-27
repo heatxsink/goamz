@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/xml"
 	"fmt"
-	"github.com/goamz/goamz/aws"
+	"github.com/heatxsink/goamz/aws"
 	"io"
 	"net/http"
 )

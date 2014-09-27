@@ -2,9 +2,9 @@ package elb_test
 
 import (
 	"flag"
-	"github.com/goamz/goamz/aws"
-	"github.com/goamz/goamz/ec2"
-	"github.com/goamz/goamz/elb"
+	"github.com/heatxsink/goamz/aws"
+	"github.com/heatxsink/goamz/ec2"
+	"github.com/heatxsink/goamz/elb"
 	"github.com/motain/gocheck"
 )
 

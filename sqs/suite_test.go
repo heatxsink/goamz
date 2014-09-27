@@ -3,7 +3,7 @@ package sqs
 import (
 	"flag"
 	"fmt"
-	"github.com/goamz/goamz/aws"
+	"github.com/heatxsink/goamz/aws"
 	"github.com/motain/gocheck"
 	"net/http"
 	"net/url"

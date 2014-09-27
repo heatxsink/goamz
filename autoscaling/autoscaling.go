@@ -19,7 +19,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/goamz/goamz/aws"
+	"github.com/heatxsink/goamz/aws"
 )
 
 const debug = false

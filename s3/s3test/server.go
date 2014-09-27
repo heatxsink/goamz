@@ -7,7 +7,7 @@ import (
 	"encoding/hex"
 	"encoding/xml"
 	"fmt"
-	"github.com/goamz/goamz/s3"
+	"github.com/heatxsink/goamz/s3"
 	"io"
 	"io/ioutil"
 	"log"

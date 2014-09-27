@@ -21,7 +21,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/goamz/goamz/aws"
+	"github.com/heatxsink/goamz/aws"
 )
 
 // The SNS type encapsulates operation with an SNS region.

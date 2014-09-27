@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/goamz/goamz/aws"
-	"github.com/goamz/goamz/iam"
-	"github.com/goamz/goamz/testutil"
+	"github.com/heatxsink/goamz/aws"
+	"github.com/heatxsink/goamz/iam"
+	"github.com/heatxsink/goamz/testutil"
 	"github.com/motain/gocheck"
 )
 
