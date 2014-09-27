@@ -626,6 +626,50 @@ func (ec2 *EC2) DescribeInstances(instIds []string, filter *Filter) (resp *Descr
 	return
 }
 
+type InstanceStatusType struct {
+	Code int `xml:"code"`
+	Name string `xml:"name"`
+}
+
+type InstanceStatusEventType struct {
+	Code string `xml:"code"`
+	Description string `xml:"description"`
+	NotBefore string `xml:"notBefore"`
+	NotAfter string `xml:"notAfter"`
+}
+
+type InstanceStatusItemType struct {
+	InstanceId string `xml:"instanceId"`
+	AvailabilityZone string `xml:"availabilityZone"`
+	EventsSet []InstanceStatusEventType `xml:"eventsSet>item"`
+	InstanceState InstanceStatusType `xml:"instanceState"`
+	SystemStatus InstanceStatusType `xml:"systemStatus"`
+	InstanceStatus InstanceStatusType `xml:"instanceStatus"`
+}
+
+// Response to a DescribeInstanceStatus request.
+//
+type DescribeInstanceStatusResp struct {
+	RequestId string `xml:"requestId"`
+	InstanceStatusSet []InstanceStatusItemType `xml:"instanceStatusSet>item"`
+	NextToken string `xml:"nextToken"`
+}
+
+func (ec2 *EC2) DescribeInstanceStatus(instIds []string, includeAllInstances bool, maxResults int, nextToken string, filter *Filter) (resp *DescribeInstanceStatusResp, err error) {
+	params := makeParams("DescribeInstanceStatus")
+	addParamsList(params, "InstanceId", instIds)
+	params["IncludeAllInstances"] = strconv.FormatBool(includeAllInstances)
+	params["MaxResults"] = strconv.Itoa(maxResults)
+	params["NextToken"] = nextToken
+	filter.addParams(params)
+	resp = &DescribeInstanceStatusResp{}
+	err = ec2.query(params, resp)
+	if err != nil {
+		return nil, err
+	}
+	return
+}
+
 // ----------------------------------------------------------------------------
 // KeyPair management functions and types.
 
