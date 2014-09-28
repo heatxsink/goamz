@@ -655,11 +655,10 @@ type DescribeInstanceStatusResp struct {
 	NextToken string `xml:"nextToken"`
 }
 
-func (ec2 *EC2) DescribeInstanceStatus(instIds []string, includeAllInstances bool, maxResults int, nextToken string, filter *Filter) (resp *DescribeInstanceStatusResp, err error) {
+func (ec2 *EC2) DescribeInstanceStatus(instIds []string, includeAllInstances bool, nextToken string, filter *Filter) (resp *DescribeInstanceStatusResp, err error) {
 	params := makeParams("DescribeInstanceStatus")
 	addParamsList(params, "InstanceId", instIds)
 	params["IncludeAllInstances"] = strconv.FormatBool(includeAllInstances)
-	params["MaxResults"] = strconv.Itoa(maxResults)
 	params["NextToken"] = nextToken
 	filter.addParams(params)
 	resp = &DescribeInstanceStatusResp{}
